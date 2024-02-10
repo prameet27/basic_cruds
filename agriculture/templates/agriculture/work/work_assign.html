@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Work Assignment {% endblock %}
+
+{% block content %}
+
+<h3>Work Assignment</h3>
+
+<form action="{% url 'work_assign' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}

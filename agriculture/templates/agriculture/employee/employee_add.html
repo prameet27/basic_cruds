@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Employee Add {% endblock %}
+
+{% block content %}
+
+<h3>Add Employee</h3>
+
+{% if success %}
+    <div class="alert alert-success" role="alert">
+        New employee added successfully.
+        <a href="{% url 'index' %}" class="alert-link">Go to Home Page</a>
+    </div>
+{% else %}
+<form action="{% url 'employee_add' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endif %}
+{% endblock %}

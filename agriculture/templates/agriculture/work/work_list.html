@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Work List {% endblock %}
+
+{% block content %}
+
+<h1>Work List</h1>
+
+<div class="col-md-12">
+    {% for work in Works %}
+    <div class="col-md-6" style="float: left;">
+            <h3>{{ work.work_primary }}</h3>
+            <img src="{{ work.work_primary_image_stufa.url }}" style="width: 700px; height: 600px;" class="rounded" alt="Employee Image" /> 
+            <p class="text-center">{{ work.work_primary_description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!-- agriculture/employee/employee_details.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Employee Details {% endblock %}
+
+{% block content %}
+  {% if employees %}
+    <h2>Employee Details</h2>
+    <table class="table">
+      <tr>
+        <th scope="col">Employment ID</th>
+        <th scope="col">Employment Image</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Temporary Address</th>
+        <th scope="col">Permanent Address</th>
+        <th scope="col">Date of Birth </th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+      {% for emp in employees %}
+      <tr>
+        <td>{{ emp.emp_id }}</td>
+        <td><img src="{{ emp.emp_image.url }}" style="width: 75px; height: 75px" class="rounded" alt="Employee Image" /></td>
+        <td>{{ emp.emp_name }}</td>
+        <td>{{ emp.emp_address_temporary }}</td>
+        <td>{{ emp.emp_address_permanent }}</td>
+        <td>{{ emp.emp_date_of_birth }}</td>
+        <td>{{ emp.emp_national }}</td>
+        <td>{{ emp.emp_email }}</td>
+        <td>{{ emp.emp_contact_number }}</td>
+        <td> <a href="{% url 'employee_edit' emp.id %}">Edit</a> <a href="{% url 'employee_delete' id=emp.id %}">Delete</a> </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>Employee not found</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Assignment List of Work to Employee {% endblock %}
+
+{% block content %}
+
+<h3>Assignment List of Work to Employee</h3>
+
+<div class="col-md-12">
+    {% for assign in assignments %}
+    <div class="col-md-6" style="float: left;">
+            <h4>{{ assign.boss_name }}</h4> 
+            <h4>{{ assign.emp_name.emp_name }}</h4>
+            <h4>{{ assign.work_primary.work_primary }}</h4>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

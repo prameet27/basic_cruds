@@ -1,0 +1,34 @@
+.body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.four_side
+{
+    width: 100%;
+}
+.four_side .one_side
+{
+    width: 25%;
+    float: left;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.one_side .image_new
+{
+    width: 175px;
+    height: 175px;
+}
+.one_side a
+{
+    font-size: 10px;
+}
+div.div_position
+{
+    float: left;
+}
+.main
+{
+    width: 100%;
+}

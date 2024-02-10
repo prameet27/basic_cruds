@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Delete Employee {% endblock %}
+
+{% block content %}
+
+
+<form method="POST" action="{% url 'employee_delete' emp.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+
+
+
+{% endblock %}
